@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .design-process-section .text-align-center {
+            line-height: 25px;
+            margin-bottom: 12px;
+        }
+
+        .design-process-content {
+            border: 1px solid #e9e9e9;
+            position: relative;
+            padding: 16px 30px;
+        }
+
+        .design-process-content img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            max-height: 100%;
+        }
+
+        .design-process-content h3 {
+            margin-bottom: 16px;
+        }
+
+        .design-process-content p {
+            line-height: 26px;
+            margin-bottom: 12px;
+        }
+
+        .process-model {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto 26px;
+            border: none;
+            z-index: 0;
+        }
+
+        .process-model li::after {
+            background: #e5e5e5;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 4px;
+            margin: 0 auto;
+            position: absolute;
+            right: -30px;
+            top: 33px;
+            width: 85%;
+            z-index: -1;
+        }
+
+        .process-model li.visited::after {
+            background: #57b87b;
+        }
+
+        .process-model li.active, .process-model li.visited {
+            color: #57b87b;
+        }
+
+        .process-model li.active i, .process-model li.visited i  {
+            color: #57b87b;
+        }
+
+        /* Your other CSS rules... */
+
+        @media screen and (max-width: 560px) {
+            /* Your responsive styles for smaller screens */
+        }
+
+        @media screen and (max-width: 380px) {
+            /* Your responsive styles for even smaller screens */
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                var href = $(e.target).attr('href');
+                var $curr = $(".process-model  a[href='" + href + "']").parent();
+
+                $('.process-model li').removeClass();
+                $curr.addClass("active");
+                $curr.prevAll().addClass("visited");
+            });
+        });
+    </script>
+</head>
+<body>
+    <section class="design-process-section" id="process-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs process-model more-icon-process" role="tablist">
+                        <li role="presentation" class="active"><a href="#discover" aria-controls="discover" role="tab" data-toggle="tab"><i class="fas fa-search"></i><p>Discover</p></a></li>
+                        <li role="presentation"><a href="#strategy" aria-controls="strategy" role="tab" data-toggle="tab"><i class="fas fa-send"></i><p>Strategy</p></a></li>
+                        <li role="presentation"><a href="#optimization" aria-controls="optimization" role="tab" data-toggle="tab"><i class="fas fa-qrcode"></i><p>Optimization</p></a></li>
+                        <li role="presentation"><a href="#content" aria-controls="content" role="tab" data-toggle="tab"><i class="fas fa-newspaper"></i><p>Content</p></a></li>
+                        <li role="presentation"><a href="#reporting" aria-controls="reporting" role="tab" data-toggle="tab"><i class="fas fa-clipboard"></i><p>Reporting</p></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="discover">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Discovery</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="strategy">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Strategy</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="optimization">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Optimization</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="content">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Content</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="reporting">
+                            <div class="design-process-content">
+                                <h3>Reporting</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+</html>
